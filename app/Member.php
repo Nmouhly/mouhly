@@ -14,6 +14,7 @@ class Member extends Model
         'email',
         'status',
         'team_id',
+        'etat',
     ];
 
     public function team()

@@ -79,4 +79,19 @@ class membreController extends Controller
         $membres=Member::all();
         return view('membre.liste')->with('membres',$membres);
     }
+    public function getMembres()
+    {
+        $membres = Member::all();
+        return response()->json($membres);
+    }
+    public function show($id)
+    {
+        $newsItem = Member::find($id);
+
+        if (!$newsItem) {
+            return response()->json(['error' => 'News not found'], 404);
+        }
+
+        return response()->json($newsItem);
+    }
 }

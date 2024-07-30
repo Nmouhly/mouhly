@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\membreController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,3 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/news', [NewsController::class, 'getNews']);
 Route::get('/news/{id}', [NewsController::class, 'show']);
+Route::get('/membres', [membreController::class, 'getMembres']);
+Route::get('/membres/{id}', [membreController::class, 'show']);

@@ -1,5 +1,13 @@
-export default function personnel(){
-    return <>
-    hi from personnel page
-    </>
-    }
+ import React from 'react';
+import MembresList from '../components/MembreList'; // Chemin d'importation correct selon votre structure de dossiers
+
+const personnel = () => {
+  return (
+    <div>
+      
+      <MembresList />
+    </div>
+  );
+};
+
+export default personnel;

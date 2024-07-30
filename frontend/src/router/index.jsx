@@ -13,7 +13,6 @@ import Layout from '../layouts/layout';
 import Login from "../components/auth/Login";
 import Register from "../components/auth/Register";
 import NewsDetail from '../components/NewsDetail'; // Assurez-vous que le chemin est correct
-
 export const router = createBrowserRouter([
   {
     element: <Layout />,
@@ -54,6 +53,7 @@ export const router = createBrowserRouter([
         path: "/news/:id",
         element: <NewsDetail />, // Ajoutez cette ligne
       },
+     
       {
         path: "/login",
         element: <Login />, // Ajoutez cette ligne
