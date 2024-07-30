@@ -84,6 +84,25 @@ class membreController extends Controller
         $membres = Member::all();
         return response()->json($membres);
     }
+    public function updateEtat(Request $request, $id)
+{
+    $membre = Member::findOrFail($id);
+    $membre->etat = $request->etat;
+    $membre->save();
+
+    return response()->json(['message' => 'Etat mis à jour avec succès']);
+}
+public function indexActuels()
+{
+    $membres = Member::where('etat', 'actuel')->get();
+    return response()->json($membres);
+}
+
+public function indexAnciens()
+{
+    $membres = Member::where('etat', 'ancien')->get();
+    return response()->json($membres);
+}
     public function show($id)
     {
         $newsItem = Member::find($id);
