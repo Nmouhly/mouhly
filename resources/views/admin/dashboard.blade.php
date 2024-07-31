@@ -39,6 +39,10 @@
                             </li>
                             <br>
                             <br>
+                           
+                            <li class="nav-item"><a class="nav-link active" href="/admin/user">
+                                <div><span class="nav-link-icon"><span data-feather="cast"></span></span><span class="nav-link-text">Utilisateur</span></div>
+                            </a></li>
                             <li class="nav-item"><a class="nav-link active" href="/admin/news">
                                     <div><span class="nav-link-icon"><span data-feather="cast"></span></span><span class="nav-link-text">ACTUALITES</span></div>
                                 </a></li>

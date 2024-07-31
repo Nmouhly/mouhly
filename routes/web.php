@@ -8,6 +8,7 @@ use App\Http\Controllers\ChercheurController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,13 @@ Route::post('/admin/news', [NewsController::class, 'store'])->name('news.store')
 Route::get('/admin/news/{news}/edit', [NewsController::class, 'edit'])->name('news.edit');
 Route::put('/admin/news/{news}', [NewsController::class, 'update'])->name('news.update');
 Route::delete('/admin/news/{news}', [NewsController::class, 'destroy'])->name('news.destroy');
+
+Route::get('/admin/user', [UserController::class, 'index'])->name('user.index');
+Route::get('/admin/user/create', [UserController::class, 'create'])->name('user.create');
+Route::post('/admin/user', [UserController::class, 'store'])->name('user.store');
+Route::get('/admin/user/{user}/edit', [UserController::class, 'edit'])->name('user.edit');
+Route::put('/admin/user/{user}', [UserController::class, 'update'])->name('user.update');
+Route::delete('/admin/user/{user}', [UserController::class, 'destroy'])->name('user.destroy');
 // Routes d'authentification
 Auth::routes();
 
@@ -58,3 +66,5 @@ Route::middleware(['auth', 'role:director'])->group(function () {
 // Route pour le tableau de bord de l'utilisateur connecté
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
