@@ -53,7 +53,7 @@ const MembresList = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/membres')
+    axios.get('http://localhost:8000/api/actuels')
       .then(response => {
         setMembers(response.data);
       })

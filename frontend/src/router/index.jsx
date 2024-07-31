@@ -4,6 +4,7 @@ import Home from '../pages/home';
 import Organisation from '../pages/organisation';
 import Equipes from '../pages/equipes';
 import Personnel from '../pages/personnel';
+import PersonnelAncien from  '../pages/personnelAncien';
 import Publications from '../pages/publications';
 import Projets from '../pages/projets';
 import Informations from '../pages/informations';
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
       {
         path: "/personnel",
         element: <Personnel />,
+      },
+      {
+        path: "/personnel/anciens",
+        element: <PersonnelAncien  etat='ancien'/>,
       },
       {
         path: "/publications",

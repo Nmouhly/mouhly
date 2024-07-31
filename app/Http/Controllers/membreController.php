@@ -94,8 +94,9 @@ class membreController extends Controller
 }
 public function indexActuels()
 {
-    $membres = Member::where('etat', 'actuel')->get();
-    return response()->json($membres);
+   
+   $membre = Member::get()->where('etat','actuel');
+    return response()->json($membre);
 }
 
 public function indexAnciens()

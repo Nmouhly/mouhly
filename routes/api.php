@@ -23,5 +23,5 @@ Route::get('/news', [NewsController::class, 'getNews']);
 Route::get('/news/{id}', [NewsController::class, 'show']);
 Route::get('/membres', [membreController::class, 'getMembres']);
 Route::get('/membres/{id}', [membreController::class, 'show']);
-Route::get('membres/actuels', [membreController::class, 'indexActuels']);
-Route::get('membres/anciens', [membreController::class, 'indexAnciens']);
+Route::get('/actuels', [membreController::class, 'indexActuels']);
+Route::get('/anciens', [membreController::class, 'indexAnciens']);
