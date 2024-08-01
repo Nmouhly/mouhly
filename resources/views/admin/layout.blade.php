@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -176,4 +176,4 @@
         <p>&copy; 2024 L2IS - Tous droits réservés</p>
     </footer>
 </body>
-</html>
+</html> --}}

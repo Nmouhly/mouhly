@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en-US" dir="ltr">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,9 +18,25 @@
     <link href="{{asset('dashassets/css/phoenix.min.css')}}" rel="stylesheet" id="style-default">
     <link href="{{asset('dashassets/css/user.min.css')}}" rel="stylesheet" id="user-style-default">
     <style>
-      body {
-        opacity: 0;
-      }
+        /* Définition de l'animation de l'arrière-plan */
+        @keyframes backgroundAnimation {
+            0% { background: linear-gradient(135deg, #f3ec78, #0b3d91); }
+            100% { background: linear-gradient(135deg, #89fffd, #00274d); }
+        }
+
+        body {
+            opacity: 0; /* Rendre le corps transparent au début */
+            animation: fadeIn 1s forwards; /* Animation pour rendre le corps visible */
+        }
+
+        /* Animation pour rendre le corps visible */
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .content {
+            animation: backgroundAnimation 10s infinite alternate; /* Appliquer l'animation d'arrière-plan */
+        }
     </style>
 </head>
 
@@ -37,33 +52,31 @@
                                     <img src="{{ asset('dashassets/img/favicons/logo.png') }}" alt="Logo" style="height: 40px;">
                                 </a>
                             </li>
-                            <br>
-                            <br>
-                           
+                            <br><br>
                             <li class="nav-item"><a class="nav-link active" href="/admin/user">
                                 <div><span class="nav-link-icon"><span data-feather="cast"></span></span><span class="nav-link-text">Utilisateur</span></div>
                             </a></li>
                             <li class="nav-item"><a class="nav-link active" href="/admin/news">
-                                    <div><span class="nav-link-icon"><span data-feather="cast"></span></span><span class="nav-link-text">ACTUALITES</span></div>
-                                </a></li>
+                                <div><span class="nav-link-icon"><span data-feather="cast"></span></span><span class="nav-link-text">ACTUALITES</span></div>
+                            </a></li>
                             <li class="nav-item"><a class="nav-link active" href="index.html">
-                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="cast"></span></span><span class="nav-link-text">EQUIPES</span></div>
-                                </a></li>
+                                <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="cast"></span></span><span class="nav-link-text">EQUIPES</span></div>
+                            </a></li>
                             <li class="nav-item"><a class="nav-link active" href="/membre/list">
-                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="cast"></span></span><span class="nav-link-text">Personnel</span></div>
-                                </a></li>
+                                <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="cast"></span></span><span class="nav-link-text">Personnel</span></div>
+                            </a></li>
                             <li class="nav-item"><a class="nav-link active" href="index.html">
-                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="cast"></span></span><span class="nav-link-text">Publications</span></div>
-                                </a></li>
+                                <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="cast"></span></span><span class="nav-link-text">Publications</span></div>
+                            </a></li>
                             <li class="nav-item"><a class="nav-link active" href="index.html">
-                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="cast"></span></span><span class="nav-link-text">Projets Industriels</span></div>
-                                </a></li>
+                                <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="cast"></span></span><span class="nav-link-text">Projets Industriels</span></div>
+                            </a></li>
                             <li class="nav-item"><a class="nav-link active" href="index.html">
-                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="cast"></span></span><span class="nav-link-text">Informations</span></div>
-                                </a></li>
+                                <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="cast"></span></span><span class="nav-link-text">Informations</span></div>
+                            </a></li>
                             <li class="nav-item"><a class="nav-link active" href="index.html">
-                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="cast"></span></span><span class="nav-link-text">Événements</span></div>
-                                </a></li>
+                                <div class="d-flex align-items-center"><span class="nav-link-icon"><span data-feather="cast"></span></span><span class="nav-link-text">Événements</span></div>
+                            </a></li>
                         </ul>
                     </div>
                     <div class="navbar-vertical-footer">
@@ -78,7 +91,9 @@
             </nav>
             <nav class="navbar navbar-light navbar-top navbar-expand">
                 <div class="navbar-logo">
-                    <button class="btn navbar-toggler navbar-toggler-humburger-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
+                    <button class="btn navbar-toggler navbar-toggler-humburger-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation">
+                        <span class="navbar-toggle-icon"><span class="toggle-line"></span></span>
+                    </button>
                     <a class="navbar-brand me-1 me-sm-3" href="index.html">
                         <div class="d-flex align-items-center">
                         </div>
@@ -110,7 +125,7 @@
                 </div>
             </nav>
             <div class="content">
-                <!-- Your page content goes here -->
+                @yield('contenu')
             </div>
         </div>
     </main>
@@ -120,5 +135,4 @@
         feather.replace();
     </script>
 </body>
-
 </html>

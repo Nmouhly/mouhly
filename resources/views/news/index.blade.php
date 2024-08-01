@@ -1,8 +1,6 @@
-@extends('admin.layout')
-@section('titre')
-Actualités
-@endsection
-@section('content')
+@extends('admin.dashboard')
+
+@section('contenu')
 <div class="container">
     <header class="header">
         <a href="{{ route('news.create') }}" class="news-button">AJOUTER</a>
