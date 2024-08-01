@@ -1,10 +1,6 @@
-@extends('admin.layout')
+@extends('admin.dashboard')
 
-@section('titre')
-Ajouter un utilisateur
-@endsection
-
-@section('content')
+@section('contenu')
     <h1>Ajouter un utilisateur</h1>
     <style>
         .input-field,

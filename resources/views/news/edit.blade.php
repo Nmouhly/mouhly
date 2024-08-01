@@ -1,6 +1,6 @@
-@extends('admin.layout')
+@extends('admin.dashboard')
 
-@section('content')
+@section('contenu')
     <style>
         .input-field,
         .textarea-field {

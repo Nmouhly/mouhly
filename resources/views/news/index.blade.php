@@ -2,6 +2,9 @@
 
 @section('contenu')
 <div class="container">
+    <h1 class="falling-title">
+        <span>A</span><span>C</span><span>T</span><span>U</span><span>A</span><span>L</span><span>I</span><span>T</span><span>E</span><span>S</span>
+    </h1>
     <header class="header">
         <a href="{{ route('news.create') }}" class="news-button">AJOUTER</a>
     </header>
@@ -133,6 +136,38 @@
         border: 1px solid #c3e6cb;
         border-radius: 4px;
         margin-bottom: 20px;
+    }
+
+    .falling-title {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 48px;
+        color: #333;
+    }
+
+    .falling-title span {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(-100px);
+        animation: fall 0.5s forwards;
+    }
+
+    .falling-title span:nth-child(1) { animation-delay: 0.1s; }
+    .falling-title span:nth-child(2) { animation-delay: 0.2s; }
+    .falling-title span:nth-child(3) { animation-delay: 0.3s; }
+    .falling-title span:nth-child(4) { animation-delay: 0.4s; }
+    .falling-title span:nth-child(5) { animation-delay: 0.5s; }
+    .falling-title span:nth-child(6) { animation-delay: 0.6s; }
+    .falling-title span:nth-child(7) { animation-delay: 0.7s; }
+    .falling-title span:nth-child(8) { animation-delay: 0.8s; }
+    .falling-title span:nth-child(9) { animation-delay: 0.9s; }
+    .falling-title span:nth-child(10) { animation-delay: 1s; }
+
+    @keyframes fall {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 </style>
 @endsection

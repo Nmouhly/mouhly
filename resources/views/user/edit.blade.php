@@ -1,10 +1,6 @@
-@extends('admin.layout')
+@extends('admin.dashboard')
 
-@section('titre')
-Éditer un utilisateur
-@endsection
-
-@section('content')
+@section('contenu')
     <style>
         .input-field,
         .select-field {

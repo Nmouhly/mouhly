@@ -1,9 +1,10 @@
-@extends('admin.layout')
-@section('titre')
-Personnel
-@endsection
-@section('content')
+@extends('admin.dashboard')
+
+@section('contenu')
 <div class="container">
+    <h1 class="falling-title">
+        <span>P</span><span>E</span><span>R</span><span>S</span><span>O</span><span>N</span><span>N</span><span>E</span><span>L</span>
+    </h1>
     <header class="header">
         <a href="/membre/form" class="news-button">Ajouter</a>
     </header>
@@ -46,9 +47,66 @@ Personnel
 
 <style>
     .container {
-        width: 80%;
+        width: 100%;
         margin: auto;
         overflow: hidden;
+    }
+
+    .falling-title {
+        display: flex;
+        justify-content: center;
+        font-size: 3em;
+        margin-bottom: 20px;
+    }
+
+    .falling-title span {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(-100px);
+        animation: fall 0.5s forwards;
+    }
+
+    .falling-title span:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .falling-title span:nth-child(2) {
+        animation-delay: 0.1s;
+    }
+
+    .falling-title span:nth-child(3) {
+        animation-delay: 0.2s;
+    }
+
+    .falling-title span:nth-child(4) {
+        animation-delay: 0.3s;
+    }
+
+    .falling-title span:nth-child(5) {
+        animation-delay: 0.4s;
+    }
+
+    .falling-title span:nth-child(6) {
+        animation-delay: 0.5s;
+    }
+
+    .falling-title span:nth-child(7) {
+        animation-delay: 0.6s;
+    }
+
+    .falling-title span:nth-child(8) {
+        animation-delay: 0.7s;
+    }
+
+    .falling-title span:nth-child(9) {
+        animation-delay: 0.8s;
+    }
+
+    @keyframes fall {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .header {
@@ -62,19 +120,16 @@ Personnel
         align-items: center;
     }
 
-    .header h1 {
-        text-align: center;
-        text-transform: uppercase;
-        margin: 0;
-        padding: 0;
-        font-size: 24px;
-    }
-
     .news-container {
         background: #fff;
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .news-table {
+        width: 100%;
+        border-collapse: collapse;
     }
 
     .news-item {
